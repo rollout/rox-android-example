@@ -15,6 +15,10 @@ buildscript {
 allprojects {
   repositories {
     jcenter()
+    mavenLocal()
+    maven {
+      url "https://oss.sonatype.org/content/repositories/releases"
+    }
   }
 }
 
