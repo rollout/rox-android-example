@@ -6,7 +6,7 @@ import io.rollout.android.Rox;
 
 public class App extends Application {
 
-  private MyRoxContainer roxContainer;
+  protected MyRoxContainer roxContainer;
 
   @Override
   public void onCreate() {

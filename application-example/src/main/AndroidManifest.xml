@@ -28,6 +28,8 @@
       android:name="rox.apiKey"
       android:value="59ac0acaeae09726fa0d8661"
       />
+
   </application>
+
 
 </manifest>

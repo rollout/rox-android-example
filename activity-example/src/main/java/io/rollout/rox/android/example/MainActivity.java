@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity
     Rox.register(roxContainer);
     Rox.setup(this.getApplication());
 
-
     setContentView(R.layout.activity_main);
     this.navView = (NavigationView) findViewById(R.id.nav_view);
     navView.setNavigationItemSelectedListener(this);
@@ -58,10 +57,24 @@ public class MainActivity extends AppCompatActivity
     } else {
       fab.setVisibility(View.GONE);
     }
+    setupWelcomeMessageLabel();
+  }
 
+  private void setupWelcomeMessageLabel() {
     // Show welcome message that was defined using Rox dashboard
     TextView textView = (TextView)findViewById(R.id.text_view);
     textView.setText(roxContainer.welcomeMessage.getValue());
+
+    int textColor = getResources().getColor(R.color.black);
+    if (roxContainer.titleColors.value().equals("Yellow")) {
+      textColor = getResources().getColor(R.color.yellow);
+    } else if (roxContainer.titleColors.value().equals("Blue")) {
+      textColor = getResources().getColor(R.color.blue);
+    } else if (roxContainer.titleColors.value().equals("Green")) {
+      textColor = getResources().getColor(R.color.green);
+    }
+
+    textView.setTextColor(textColor);
   }
 
   private void setupFab(MyRoxContainer roxContainer) {

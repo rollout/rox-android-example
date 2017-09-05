@@ -4,7 +4,7 @@ android {
   compileSdkVersion 25
   buildToolsVersion "25.0.3"
   defaultConfig {
-    applicationId "io.rollout.android.rox.example"
+    applicationId "io.rollout.rox.android.example.activity"
     minSdkVersion 15
     targetSdkVersion 25
     versionCode 1
