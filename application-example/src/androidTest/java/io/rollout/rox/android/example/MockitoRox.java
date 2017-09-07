@@ -9,6 +9,9 @@ import io.rollout.remoteconfiguration.RoxRemoteConfiguration;
 import java.lang.reflect.Field;
 
 import org.mockito.Mockito;
+import org.mockito.stubbing.OngoingStubbing;
+
+import static org.mockito.Mockito.when;
 
 public class MockitoRox {
 

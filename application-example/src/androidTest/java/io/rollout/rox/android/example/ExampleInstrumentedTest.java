@@ -1,18 +1,14 @@
 package io.rollout.rox.android.example;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.BaseTransientBottomBar;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.Description;
 import org.junit.runner.RunWith;
-import org.junit.runners.model.Statement;
+import org.mockito.Mockito;
 
 import io.rollout.flags.RoxFlag;
 
@@ -42,6 +38,7 @@ public class ExampleInstrumentedTest {
 
   @Test
   public void whenEnableFabIsFalseFabShouldNotBeVisible() {
+    roxContainer.enableFab = Mockito.mock(RoxFlag.class);
     when(roxContainer.enableFab.isEnabled()).thenReturn(false);
 
     activityRule.launchActivity(new Intent(Intent.ACTION_MAIN));
@@ -50,6 +47,7 @@ public class ExampleInstrumentedTest {
 
   @Test
   public void whenEnableFabIsTrueFabShouldBeVisible() {
+    roxContainer.enableFab = Mockito.mock(RoxFlag.class);
     when(roxContainer.enableFab.isEnabled()).thenReturn(true);
 
     activityRule.launchActivity(new Intent(Intent.ACTION_MAIN));
