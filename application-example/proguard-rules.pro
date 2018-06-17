@@ -23,7 +23,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keepclasseswithmembernames public class * extends io.rollout.android.configuration.RoxContainer {
+-keepclasseswithmembernames public class * implements io.rollout.android.configuration.RoxContainer {
   *;
 }
 -keepclasseswithmembernames public class io.rollout.** {
