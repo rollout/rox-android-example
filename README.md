@@ -18,7 +18,7 @@ Visit http://www.rollout.io/ to add ROX SDK to your app
 
 ## Getting Started
 
-Please see the detailed instructions in our docs on how to [install Rox in your android project](https://support.rollout.io/docs/android-installation) and [the ROX Android quickstart](https://support.rollout.io/docs/android-quickstart) to get you quickly up and running.
+Please see the detailed instructions in our docs on how to [install Rollout SDK in your android project](https://support.rollout.io/docs/android) and [Rollout getting started](https://support.rollout.io/docs/getting-started-guide) to get you quickly up and running.
 
 ## Documentation
 
