@@ -34,7 +34,7 @@
 
     <meta-data
       android:name="rox.apiKey"
-      android:value="59ef00aaa38cf5228c84319a"/>
+      android:value="<put rollout key here>"/>
 
   </application>
 
