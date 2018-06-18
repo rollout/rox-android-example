@@ -10,8 +10,16 @@ Follow [Rollout.io](https://app.rollout.io/) installation instrcutions and place
 This project includes 3 flags:
 
   * enable fab - Controls the Floating Action Button visibility
+  
+  ![demo](screenshots/enable_fab.gif)
+  
  * Title Color - a enum base solution that controls the title colors
- * enable flags activity - Allows you to control who see's rollout built in flag activity controller (see [docs](https://support.rollout.io/docs/flags-view)
+ 
+   ![demo](screenshots/change_color.gif)
+ 
+ * enable flags activity - Allows you to control who see's rollout built in flag activity controller (see [docs](https://support.rollout.io/docs/flags-view))
+ 
+    ![demo](screenshots/enable_flag_activity.gif)
  
  You can see these flags definitons here: (`MyRoxContainer.java`)
  ```java
