@@ -1,6 +1,73 @@
 ROX
 ==============
 
+## How to use this project 
+
+Follow [Rollout.io](https://app.rollout.io/) installation instrcutions and place `rollout environment key` in `AndroidManifest.xml` file
+
+## What can you control
+
+This project includes 3 flags:
+
+  * enable fab - Controls the Floating Action Button visibility
+ * Title Color - a enum base solution that controls the title colors
+ * enable flags activity - Allows you to control who see's rollout built in flag activity controller (see [docs](https://support.rollout.io/docs/flags-view)
+ 
+ You can see these flags definitons here: (`MyRoxContainer.java`)
+ ```java
+ public class MyRoxContainer implements RoxContainer {
+
+  // welcome message ROX configuration
+  public RoxConfigurationString welcomeMessage;
+
+  // enableFab flag
+  public RoxFlag enableFab = new RoxFlag(true);
+
+/*
+ * Enum based multi variant feature flag with default value white
+ * This can also be done without Enum with the following code
+ *
+ * <pre>
+ * public RoxVariant titleColors = new RoxVariant("White", new String[] {"White, ""Blue", "Yellow"});
+ * </pre>
+ */
+  public RoxEnumVariant<Color> titleColors = new RoxEnumVariant<>(Color.WHITE);
+
+  public enum Color {
+    WHITE, BLUE, YELLOW
+  }
+
+  // Flag value is false by default
+  public RoxFlag enableFlagsActivity = new RoxFlag();
+
+  // declare more flags here
+  // ...
+
+  public MyRoxContainer(Context context) {
+
+    //Example for a flag that requires Android context
+    String welcomeMessageDefault = context.getResources().getString(R.string.welcome_message);
+    welcomeMessage = new RoxConfigurationString(welcomeMessageDefault);
+  }
+}
+```
+
+And flag usage example here: (from `MainActivity.java`)
+```java
+ private void setCameraButton() {
+    if (roxContainer.enableFab.isEnabled()) {
+      fab.setVisibility(View.VISIBLE);
+      toolbarEditButton.setVisible(false);
+    } else {
+      fab.setVisibility(View.GONE);
+      toolbarEditButton.setVisible(true);
+    }
+
+    setupEditButtonBehaviour(roxContainer);
+  }
+```
+
+
 ## Continuous Feature Rollouts for Mobile Release
 
 Release mobile features quickly and safely with fully controlled rollouts, measure impact, and react as needed without waiting for your next code release.
